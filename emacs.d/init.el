@@ -2,7 +2,6 @@
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
-(setq auto-save-list-file-prefix `(("." . "~/.emacs-auto-save-list/.saves-")))
 
 (setq delete-old-versions t
   kept-new-versions 6
