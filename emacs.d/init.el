@@ -25,6 +25,7 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(inhibit-startup-screen t)
+ '(scroll-bar-mode (quote right))
  '(show-paren-mode t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
