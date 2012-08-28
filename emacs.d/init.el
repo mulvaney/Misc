@@ -3,10 +3,7 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 
-(setq delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
+
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 
@@ -25,8 +22,8 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(inhibit-startup-screen t)
- '(scroll-bar-mode (quote right))
- '(show-paren-mode t))
+ '(scroll-bar-mode (quote right)))
+
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,6 +36,9 @@
 ;;; rhtml mode
 (add-to-list 'load-path "~/.emacs.d/rhtml")
 (require 'rhtml-mode)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+(autoload 'javascript-mode "javascript" nil t)
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
