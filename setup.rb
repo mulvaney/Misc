@@ -9,15 +9,21 @@ system("git submodule update")
 
 emacs_dest = File.expand_path('~/.emacs.d')
 if File.exists?(emacs_dest)
-  puts "Moving ~/emacs.d to .emacs.d.backup"
-  FileUtils.move(emacs_dest, File.expand_path('~/.emacs.d.backup'))
+  if File.symlink?(emacs_dest)
+    puts "~/.emacs.d already linked, skipping"
+  else
+    puts "Moving ~/emacs.d to .emacs.d.backup"
+    FileUtils.move(emacs_dest, File.expand_path('~/.emacs.d.backup'))
+  end
+else
+  File.symlink(File.join(Dir.pwd, 'emacs.d'), emacs_dest)
 end
 
-File.symlink('emacs.d', emacs_dest)
 
 tmux_dest = File.expand_path('~/.tmux.conf')
 if File.exists?(tmux_dest)
   puts ".tmux.conf already exists, not linking"
 else
-  File.symlink('tmux/tmux.conf', tmux_dest)
+  tmux = File.join(Dir.pwd, 'tmux', 'tmux.conf')
+  File.symlink(tmux, tmux_dest)
 end
