@@ -42,6 +42,8 @@
 (add-to-list 'load-path "~/.emacs.d/rhtml")
 (require 'rhtml-mode)
 
+(load-file "~/.emacs.d/arbortext-mode/arbortext-mode.el")
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 (autoload 'javascript-mode "javascript" nil t)
 
