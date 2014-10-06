@@ -19,21 +19,22 @@
 (menu-bar-mode -1)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(inhibit-startup-screen t)
- '(show-paren-mode t)
- '(scroll-bar-mode (quote right)))
+ '(safe-local-variable-values (quote ((encoding . binary) (encoding . utf-8) (basic-offset . 2) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby"))))
+ '(scroll-bar-mode (quote right))
+ '(show-paren-mode t))
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 (put 'narrow-to-region 'disabled nil)
@@ -41,6 +42,8 @@
 ;;; rhtml mode
 (add-to-list 'load-path "~/.emacs.d/rhtml")
 (require 'rhtml-mode)
+
+(add-to-list 'load-path "~/.emacs.d/modules")
 
 (load-file "~/.emacs.d/arbortext-mode/arbortext-mode.el")
 
@@ -75,4 +78,11 @@
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;;
+;; Setup puppet-mode for autoloading
+;;
+(autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
+
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
