@@ -74,3 +74,5 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
