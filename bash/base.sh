@@ -21,7 +21,7 @@ YELLOW="\[\033[1;33m\]"
 WHITE="\[\033[1;37m\]"
 
 source ~/Misc/bash/git-prompt.sh
-PS1="\[$LIGHT_GREEN\]\h \[$GREEN\]\W\[$CYAN\]\$(__git_ps1)\[$NO_COLOUR\]\n\$ "
+PS1="$LIGHT_GREEN\h $GREEN\W$CYAN\$(__git_ps1)$NO_COLOUR\n\$ "
 
 
 alias l='/bin/ls -F'
@@ -30,6 +30,3 @@ alias ll='l -l'
 
 alias pd=pushd
 alias pop=popd
-
-
-
