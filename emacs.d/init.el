@@ -77,6 +77,8 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
+(add-to-list 'auto-mode-alist '("\\.js\\.erb$" . javascript-mode))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;
@@ -85,4 +87,3 @@
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
-
