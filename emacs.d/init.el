@@ -46,9 +46,12 @@
 (add-to-list 'load-path "~/.emacs.d/modules")
 
 (load-file "~/.emacs.d/arbortext-mode/arbortext-mode.el")
+(load-file "~/.emacs.d/js2-old-indent.el")
+(load-file "~/.emacs.d/js2-mode.el")
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
-(autoload 'javascript-mode "javascript" nil t)
+
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+;; (autoload 'javascript-mode "javascript" nil t)
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -77,7 +80,10 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js\\.erb$" . javascript-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js\\.erb$" . javascript-mode))
+
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
